@@ -1,36 +1,29 @@
 package com.ait.qa30;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase{
 
     @Test
-    public void createNewAccountPositiveTest(){
+    public void createNewAccountNegativeTest(){
         //click on Login link
-        driver.findElement(By.cssSelector("[href='/register']")).click();
+        click(By.cssSelector("[href='/register']"));
         //enter firstname
-        driver.findElement(By.name("FirstName")).click();
-        driver.findElement(By.name("FirstName")).clear();
-        driver.findElement(By.name("FirstName")).sendKeys("Mike");
+        type(By.name("FirstName"), "Mike");
         //enter lastname
-        driver.findElement(By.name("LastName")).click();
-        driver.findElement(By.name("LastName")).clear();
-        driver.findElement(By.name("LastName")).sendKeys("Smith");
+        type(By.name("LastName"), "Smith");
         //enter email
-        driver.findElement(By.name("Email")).click();
-        driver.findElement(By.name("Email")).clear();
-        driver.findElement(By.name("Email")).sendKeys("mike@gm.com");
+        type(By.name("Email"), "mike@gm.com");
         //enter password
-        driver.findElement(By.name("Password")).click();
-        driver.findElement(By.name("Password")).clear();
-        driver.findElement(By.name("Password")).sendKeys("Mike1234$");
+        type(By.name("Password"), "Mike1234$");
         //enter Confirm Password
-        driver.findElement(By.name("ConfirmPassword")).click();
-        driver.findElement(By.name("ConfirmPassword")).clear();
-        driver.findElement(By.name("ConfirmPassword")).sendKeys("Mike1234$");
+        type(By.name("ConfirmPassword"), "Mike1234$");
         //click on register button
-        driver.findElement(By.name("register-button")).click();
-
+        click(By.name("register-button"));
+        //assert Alert is appeared
+        Assert.assertTrue(isAlertPresent());
     }
+
 }
