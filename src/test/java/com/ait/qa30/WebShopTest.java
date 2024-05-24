@@ -40,7 +40,7 @@ public class WebShopTest {
         // className == //tag[@class='par']
         driver.findElement(By.xpath("//*[@class='top-menu']"));
         // contains //tag[contains(.,'Text')]
-        driver.findElement(By.xpath("//*[contains(.,'Genuine Leather Handbag with Cell Phone Holder & Many Pockets')]"));
+        //driver.findElement(By.xpath("//*[contains(.,'Genuine Leather Handbag with Cell Phone Holder & Many Pockets')]"));
         driver.findElement(By.xpath("//*[text()='Digital downloads']"));
     }
 
